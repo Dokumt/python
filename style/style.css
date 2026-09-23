@@ -1,0 +1,80 @@
+@font-face {
+	font-family: "Arista Pro";  
+	src: url("fonts/AristaPro-Light.ttf") format("truetype"); 
+	font-style: normal; 
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "Futura";  
+	src: url("fonts/Futura-PT.ttf") format("truetype"); 
+	font-style: normal; 
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "AnonymousPro";  
+	src: url("fonts/AnonymousPro-Regular.ttf") format("truetype"); 
+	font-style: normal; 
+	font-weight: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+	font: 21px Futura, tahoma, sans-serif;
+	line-height: 0.9; /* Межстрочный интервал */
+	background: #363636;
+	margin: 0;
+}
+
+a {
+	font: 21px Arista Pro, tahoma, sans-serif;
+	color: #99c3ff;
+	text-decoration: none; /* Убрать подчеркивание */
+}
+/*Задали отступ (расстояние) между абзацами*/
+p {
+	margin: 10px 5px;
+}
+
+article {
+	margin-bottom: 10px; /* Внешний отступ снизу */
+	background: #5e5e5e;
+	border-top: solid 2.5px #919191;
+	border-bottom: solid 2.5px #919191;
+	text-align: center;
+}
+/*Ограничиваем ширину раздела, чтобы содержимое не растягивалось слишком сильно и не прижималось к краям страницы */
+article > * {
+	max-width: 60%;
+	margin: 10px auto; /* Внешний отступ между дочерними тегами сверху и снизу 10px, по бокам выравнивание по середине */
+}
+/*
+Стиль для первого раздела(класс устанавливается в articleStyle.js)
+Убираем границу сверху
+*/
+.global-first-article {
+	padding-top: 10px;
+	border-top: 0;
+}
+/*
+Стиль для второго раздела
+Убираем границу снизу
+*/
+.global-last-article {
+	padding-bottom: 10px;
+	margin-bottom: 0;
+	border-bottom: 0;
+}
+
+.flexContainer {
+	display: flex;
+}
+
+.flexCenter {
+	justify-content: center;
+	align-items: center;
+}
