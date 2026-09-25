@@ -40,6 +40,11 @@ p {
 	margin: 10px 5px;
 }
 
+img {
+	margin: auto 5px;
+	width: 4vw; /*5% от ширины экрана*/
+}
+
 article {
 	margin-bottom: 10px; /* Внешний отступ снизу */
 	background: #5e5e5e;
@@ -75,6 +80,25 @@ article > * {
 }
 
 .flexCenter {
-	justify-content: center;
-	align-items: center;
+	justify-content: center; /*выравнивает флекс-элементы внутри флекс-контейнера по основной оси*/
+	align-items: self-start; /*выравнивает элементы внутри контейнера по поперечной оси (вертикаль)*/
+}
+/*Горизонтальное выравниваение элемента flex-контейнера*/
+.itemCenter { 
+	align-self: center;
+}
+
+
+
+
+@media (max-width: 1000px) {
+	img {
+		width: 6vw;
+	}
+}
+
+@media (max-width: 500px) {
+	img {
+		width: 10vw;
+	}
 }
