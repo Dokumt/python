@@ -42,7 +42,14 @@ p {
 
 img {
 	margin: auto 5px;
-	width: 4vw; /*5% от ширины экрана*/
+}
+
+.imgW {
+	width: 4vw; /*4% от ширины экрана*/
+}
+
+.imgH {
+	height: 4vh;
 }
 
 article {
@@ -54,8 +61,12 @@ article {
 }
 /*Ограничиваем ширину раздела, чтобы содержимое не растягивалось слишком сильно и не прижималось к краям страницы */
 article > * {
-	max-width: 60%;
+	max-width: 45%;
 	margin: 10px auto; /* Внешний отступ между дочерними тегами сверху и снизу 10px, по бокам выравнивание по середине */
+}
+
+.console {
+	font: 21px AnonymousPro, Courier, monospace;
 }
 /*
 Стиль для первого раздела(класс устанавливается в articleStyle.js)
@@ -77,11 +88,23 @@ article > * {
 
 .flexContainer {
 	display: flex;
+	align-items: center; /*выравнивает элементы внутри контейнера по поперечной оси (вертикаль)*/
 }
 
 .flexCenter {
 	justify-content: center; /*выравнивает флекс-элементы внутри флекс-контейнера по основной оси*/
-	align-items: self-start; /*выравнивает элементы внутри контейнера по поперечной оси (вертикаль)*/
+}
+
+.flexColumn {
+	flex-direction: column;
+}
+/* значение по умолчанию justify-content:flex-start, поэтому не всегда обазятельно прописывать этот класс*/
+.flexLeft {
+	justify-content: left;
+}
+
+.flexAlignStart {
+	align-items: self-start; /*Элементы по вертикали вверху*/
 }
 /*Горизонтальное выравниваение элемента flex-контейнера*/
 .itemCenter { 
@@ -90,14 +113,24 @@ article > * {
 
 
 
-
+/*ширина экрана меньше или равна 1000px*/
 @media (max-width: 1000px) {
+
+	article > * {
+		max-width: 70%;
+	}
+
 	img {
 		width: 6vw;
 	}
 }
 
 @media (max-width: 500px) {
+
+	article > * {
+		max-width: 90%;
+	}
+
 	img {
 		width: 10vw;
 	}
