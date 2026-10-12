@@ -36,8 +36,14 @@ a {
 	text-decoration: none; /* Убрать подчеркивание */
 }
 /*Задали отступ (расстояние) между абзацами*/
-p {
+p{
 	margin: 10px 5px;
+}
+
+.alternative {
+	display: inline-block;
+	font-size: 19px;
+	margin: 3px auto;
 }
 
 img {
@@ -50,6 +56,14 @@ img {
 
 .imgH {
 	height: 4vh;
+}
+
+.console {
+	font: 21px AnonymousPro, Courier, monospace;
+}
+
+.white {
+	color: #CCCCC2;
 }
 
 article {
@@ -65,9 +79,6 @@ article > * {
 	margin: 10px auto; /* Внешний отступ между дочерними тегами сверху и снизу 10px, по бокам выравнивание по середине */
 }
 
-.console {
-	font: 21px AnonymousPro, Courier, monospace;
-}
 /*
 Стиль для первого раздела(класс устанавливается в articleStyle.js)
 Убираем границу сверху
@@ -111,7 +122,58 @@ article > * {
 	align-self: center;
 }
 
+.cursor {
+	cursor: pointer;
+	position: relative;
+}
+/*тень в левом нижнем углу для непрожатого курсора(класс hidden активен)*/
+.cursor.active::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 10px; 
+	height: 10px;
+	box-shadow: -5px 5px 4px 0px rgba(0, 0, 0, 0.4);
+	transition-duration: 0.5s;
+}
+/*анимация для непрожатого курсора*/
+.cursor.active:hover::after {
+	width: 100%; 
+	height: 100%;
+}
+/*анимация для прожатого курсора(класс hidden скрыт)*/
+.cursor.inactive::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%; 
+	height: 100%;
+	box-shadow: -5px 5px 4px 0px rgba(187, 4, 4, 0.4);
+	transition-duration: 0.5s;
+}
 
+.hide {
+	display: grid; 
+	grid-template-rows: 1fr; /*анимируем размер строки*/
+	transition: 0.5s grid-template-rows ease;
+}
+
+.hide > div { /*скрываемый блок вынесен отдельно, иначе box-shadow будет виден всегда*/
+	overflow: hidden; /*скрываем выходящий за рамки 0fr тени*/
+}
+/*блок с затемнением*/
+.hide > div > div { /* двойная структура div > div нужна, чтобы избавиться от скачков отсутпов*/
+	display: inline-block;
+	padding: 5px;
+	margin: 8px;
+	box-shadow: rgba(0, 0, 0, 0.09) 0px -2px 2px, rgba(0, 0, 0, 0.09) 0px -4px 4px, rgba(0, 0, 0, 0.09) 0px -8px 8px;
+}
+
+.hidden {
+	grid-template-rows: 0fr;
+}
 
 /*ширина экрана меньше или равна 1000px*/
 @media (max-width: 1000px) {
