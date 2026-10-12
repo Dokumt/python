@@ -32,22 +32,34 @@
 					<div>
 						<p>Прожать клавиши</p>
 						<div class="flexContainer flexCenter">
-							<img src="img/buttonWindow.svg" alt="Альтернативы" class="imgW">
+							<img src="img/buttonWindow.svg" alt="Клавиша Window" class="imgW">
 							<p class="itemCenter">+</p>
-							<img src="img/buttonR.svg" alt="Альтернативы" class="imgW">
+							<img src="img/buttonR.svg" alt="Клавиша R" class="imgW">
 						</div>
 					</div>
 					<div>
 						<p>Выбрать консоль</p>
-						<p>cmd<br><i>или</i><br>powershell</p>
+						<p>cmd<br><span class="alternative"><i>или</i></span><br>powershell</p>
 					</div>
 					<div>
 						<p>Ввести команду</p>
-						<p><span class="console">py</span><br><i>или</i><br><span class="console">python</span></p>
+						<p><span class="console">py</span><br><span class="alternative"><i>или</i></span><br><span class="console">python</span></p>
 					</div>
 				</div>
 				<div class="flexContainer">
-					<p><span class="console">exit()</span><br><i>или</i><br><span class="console">quit()</span></p>
+					<p>
+						<span class="console">--version</span>
+						<br><span class="alternative"><i>или</i></span><br>
+						<span class="console">-V</span>
+					</p>
+					<p> - узнать установленную версию</p>
+				</div>
+				<div class="flexContainer">
+					<p>
+						<span class="console">exit()</span>
+						<br><span class="alternative"><i>или</i></span><br>
+						<span class="console">quit()</span>
+					</p>
 					<p> - выход из командной оболочки</p>
 				</div>
 				<div class="flexContainer flexAlignStart">
@@ -58,13 +70,33 @@
 						<p>атрибуты и функции переданного объекта</p>
 					</div>
 				</div>
-				<div class="flexContainer">
-					<p><span class="console">help()</span> - интерактивная справочная система</p>
-				</div>
-				<div class="flexContainer">
-					<img src="img/helpModules.svg" alt="Получить все модули" class="imgH">
-					<p> - получить список всех доступных модулей</p>
-				</div>
+				<div class="hideContainer">
+					<div class="flexContainer">
+						<p><span class="console cursor active" onclick="visible(this)">help()</span> - интерактивная справочная система</p>
+					</div>
+					<div class="hide hidden">
+						<div>
+							<div>
+								<div class="flexContainer">
+									<p><span class="console white">help> modules</span></p>
+									<p> - получить список всех доступных модулей</p>
+								</div>
+								<div class="flexContainer">
+									<p><span class="console white">help> keywords</span></p>
+									<p> - список всех ключевых слов языка Python</p>
+								</div>
+								<div class="flexContainer">
+									<p><span class="console white">help> symbols</span></p>
+									<p> - список используемых операторов и символов</p>
+								</div>
+								<div class="flexContainer">
+									<p><span class="console white">help> q</span></p>
+									<p> - выход из режима справки обратно в консоль REPL</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
 			</article>
 			<article>
 				<div>
